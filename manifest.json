@@ -1,0 +1,10 @@
+{
+    "name": "Youtube Downloader Extension",
+    "description": "Download youtube videos straight from youtube.com",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage"]
+}
