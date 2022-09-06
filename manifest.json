@@ -3,11 +3,29 @@
     "description": "Download youtube videos straight from youtube.com",
     "version": "1.0",
     "manifest_version": 3,
+
     "background": {
         "service_worker": "background.js"
     },
-    "permissions": ["storage", "activeTab", "scripting"],
+
     "action": {
-        "default_popup": "popup.html"
-    }
+        "default_icon": {
+            "64": "/images/ytdownloadicon.png"
+        }
+    },
+
+
+    
+    "icons": {
+        "64": "/images/ytdownloadicon.png"
+    },
+
+    "permissions": ["storage", "activeTab", "scripting", "tabs"],
+    "host_permissions": ["https://www.youtube.com/*"],
+
+    "content_scripts": [{
+        "css": ["styles.css"],
+        "js": ["content.js"],
+        "matches": ["https://www.youtube.com/*"]
+    }]
 }
